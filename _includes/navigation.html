@@ -1,0 +1,39 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    {% if page.language == "ja" %}
+
+    <a class="navbar-brand" href="/">
+      <img src="/assets/images/dsss-lab-logo.png" alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
+    分散ソフトウェアシステム研究室
+    </a>
+    <div class="navbar-brand ms-auto">
+      <a class="mx-2 link-secondary link-underline-opacity-25 link-underline-opacity-75-hover fs-6">日本語</a>/<a class="mx-2 link-body-emphasis link-underline-opacity-25 link-underline-opacity-75-hover fs-6" href="/en/{{ page.url | remove_first: '/ja' | remove_first: '/' }}">English</a>
+    </div>
+
+    {% else %}
+
+    <a class="navbar-brand" href="/en">
+      <img src="/assets/images/dsss-lab-logo.png" alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
+    Distributed Software Systems Lab
+    </a>
+    <div class="navbar-brand ms-auto">
+      <a class="mx-2 link-body-emphasis link-underline-opacity-25 link-underline-opacity-75-hover fs-6" href="/{{ page.url | remove_first: '/en' | remove_first: '/' }}">日本語</a>/<a class="mx-2 link-secondary link-underline-opacity-25 link-underline-opacity-75-hover fs-6"">English</a>
+    </div>
+
+    {% endif %}
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        {% for item in site.data[page.language].navigation %}
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{{ item.link }}">{{ item.name }}</a>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</nav>

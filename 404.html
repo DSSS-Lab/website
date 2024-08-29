@@ -1,0 +1,40 @@
+---
+layout: 404
+---
+
+<div class="text-center m-4">
+  <a class="navbar-brand fs-4" href="/">
+    <img src="/assets/images/dsss-lab-logo.png" alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
+    <span id="lab-name">分散ソフトウェアシステム研究室</span>
+  </a>
+</div>
+<h1 class="display-1 text-center">404</h1>
+<p class="text-center"><strong id="not-found">ページが見つかりませんでした</strong></p>
+<div class="text-center">
+  <a href="/" class="btn btn-outline-dark" role="button" id="return-home">ホームに戻る</a>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const contentDiv = document.getElementById('content');
+    const language = navigator.language || navigator.userLanguage;
+
+    let notFoundText = '';
+    let returnHomeText = '';
+    let labName = '';
+
+    if (language === 'ja') {
+      notFoundText = 'ページが見つかりませんでした';
+      returnHomeText = 'ホームに戻る';
+      labName = '分散ソフトウェアシステム研究室'
+    } else {
+      notFoundText = 'The page you requested was not found';
+      returnHomeText = 'Back to Home';
+      labName = 'Distributed System Software Lab';
+    }
+
+    document.getElementById('not-found').textContent = notFoundText;
+    document.getElementById('return-home').textContent = returnHomeText;
+    document.getElementById('lab-name').textContent = labName;
+  });
+</script>

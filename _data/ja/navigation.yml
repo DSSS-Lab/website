@@ -1,0 +1,4 @@
+- name: ホーム
+  link: /
+- name: メンバー
+  link: /member
