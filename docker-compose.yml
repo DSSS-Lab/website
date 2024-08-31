@@ -1,0 +1,17 @@
+services:
+  site:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    init: true
+    volumes:
+      - .:/app
+      - bundle_cache:/usr/local/bundle
+    ports:
+      # Server address
+      - 4000:4000
+      # LiveReload address
+      - 35729:35729
+
+volumes:
+  bundle_cache:
